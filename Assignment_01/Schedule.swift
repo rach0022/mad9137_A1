@@ -15,7 +15,7 @@ class Schedule {
     // Get only property for the count of events
     var eventCount: Int {
         //using a guard statement to check whether the event array has any items
-        guard self.eventArray.isEmpty else {
+        guard !self.eventArray.isEmpty else {
             return 0
         }
         
@@ -31,7 +31,7 @@ class Schedule {
     func outputAllEvents() -> String {
         
         // use a guard statement to check if the event array is empty
-        guard self.eventArray.isEmpty else {
+        guard !self.eventArray.isEmpty else {
             return "Error: There are no events to output!"
         }
         
@@ -40,8 +40,8 @@ class Schedule {
         var outputString: String = ""
         
         //loop through each event from 0 to the length using counter = c
-        for c in 0 ... self.eventArray.count {
-            outputString += "Event \(c): \(self.eventArray[c].getInfo())"
+        for c in 0 ..< self.eventArray.count {
+            outputString += "Event \(c): \(self.eventArray[c].getInfo())\n"
         }
         
         return outputString
